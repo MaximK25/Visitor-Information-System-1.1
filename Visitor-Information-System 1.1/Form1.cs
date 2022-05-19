@@ -240,6 +240,11 @@ namespace Visitor_Information_System_1._1
             ListBox_Data_Load(); // Calling load listbox function to fetch inserted row as well as display in ListBox
 
         }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
