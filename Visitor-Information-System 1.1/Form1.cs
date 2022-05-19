@@ -33,6 +33,7 @@ namespace Visitor_Information_System_1._1
             TB_VisitorName.Clear();
             TB_VisitorSurname.Clear();
             TB_Email.Clear();
+            TB_Mobile.Clear();
             TB_Visitor_ID.Clear();
             CB_Meeting_With.Text = "Select From Drop Down";
             LB_Visitor_Details.Items.Clear();
@@ -101,7 +102,7 @@ namespace Visitor_Information_System_1._1
             conn.Close();
         }
 
-        private void btn_Add_Click(object sender, EventArgs e) //What is the button ADD??//
+        private void Btn_Add_Click(object sender, EventArgs e) //What is the button ADD??//
         {
 
             // Creating instance of SqlConnection 
@@ -109,7 +110,7 @@ namespace Visitor_Information_System_1._1
 
             // set the sql command ( Statement )
             string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Meeting_With) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', '" + TB_Staff_ID.Text +" )";
-            //FINISHED HERE//
+           
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd4 = new SqlCommand(sql_Query3, conn);
 
@@ -124,13 +125,13 @@ namespace Visitor_Information_System_1._1
 
             ListBox_Data_Load(); // Calling load listbox function to fetch inserted row as well as display in ListBox
         }
-        private void Course_ID_Function(object sender, EventArgs e)
+        private void Staff_ID_Function(object sender, EventArgs e)
         {
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string Course_ID_Query = "Select Course_Id from Course_Details where Course_Name ='" + CB_Course_Details.SelectedItem.ToString() + "'";
+            string Staff_ID_Query = "Select Staff_Id from Staff where Meeting_With ='" + CB_Meeting_With.SelectedItem.ToString() + "'";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd3 = new SqlCommand(Course_ID_Query, conn);
@@ -143,28 +144,28 @@ namespace Visitor_Information_System_1._1
             while (reader.Read())
             {
                 //populate data in TextBox from Reader
-                TB_Course_ID.Text = reader["Course_Id"].ToString();
+                TB_Staff_ID.Text = reader["Staff_Id"].ToString();
             }
 
             //Close connection
             conn.Close();
         }
-        private void LB_Student_MouseClick(object sender, MouseEventArgs e)
+        private void LB_Visitor_Details_MouseClick(object sender, MouseEventArgs e)
         {
-            var selectedValue = LB_Student.SelectedItem;
+            var selectedValue = LB_Visitor_Details.SelectedItem;
             if (selectedValue != null)
             {
                 MessageBox.Show(selectedValue.ToString());
             }
-            string StudentData = LB_Student.SelectedItem.ToString();
-            string[] Field_Data = StudentData.Split('-');
-            Stud_ID = Int16.Parse(Field_Data[0]);
+            string VisitorData = LB_Visitor_Details.SelectedItem.ToString();
+            string[] Field_Data = VisitorData.Split('-');
+            Visitor_ID = Int16.Parse(Field_Data[0]);
 
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement ) 
-            string sql_Query = "select Student_Info.Id, Student_Info.Name, Student_Info.Mobile, Student_Info.Email,Course_Details.Course_ID, Course_Details.Course_Name From Student_Info, Course_Details Where Student_Info.Course_ID = Course_Details.Course_ID AND Id =" + Stud_ID;
+            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email,Staff.Staff_ID, Staff.Meetung_With From Visitor, Staff Where Visitor.Staff_ID = Staff.Staff_ID AND Visitor_Id =" + Visitor_ID;
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd = new SqlCommand(sql_Query, conn);
@@ -177,12 +178,13 @@ namespace Visitor_Information_System_1._1
             while (reader.Read())
             {
                 //populate data in TextBox from Reader
-                TB_Student_ID.Text = reader["Id"].ToString();
-                TB_Name.Text = reader["Name"].ToString();
+                TB_Visitor_ID.Text = reader["Visitor_Id"].ToString();
+                TB_VisitorName.Text = reader["VisitorName"].ToString();
+                TB_VisitorSurname.Text = reader["Surname"].ToString();
                 TB_Mobile.Text = reader["Mobile"].ToString();
                 TB_Email.Text = reader["Email"].ToString();
-                CB_Course_Details.Text = reader["Course_Name"].ToString();
-                TB_Course_ID.Text = reader["Course_Id"].ToString();
+                CB_Meeting_With.Text = reader["Meeting_WIth"].ToString();
+                TB_Staff_ID.Text = reader["Staff_Id"].ToString();
             }
 
             //Close Database reader
@@ -193,13 +195,13 @@ namespace Visitor_Information_System_1._1
 
         }
 
-        private void btn_Update_Click(object sender, EventArgs e)
+        private void Btn_Update_Click(object sender, EventArgs e)
         {
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query4 = "Update Student_Info set Name = '" + TB_Name.Text + "', Mobile ='" + TB_Mobile.Text + "', Email ='" + TB_Email.Text + "', Course_ID =" + TB_Course_ID.Text + " Where Id=" + TB_Student_ID.Text;
+            string sql_Query4 = "Update Visitor set Visitor Name = '" + TB_VisitorName.Text + "', Surname ='" + TB_VisitorSurname.Text + "', Mobile ='" + TB_Mobile.Text + "', Email ='" + TB_Email.Text + "', Staff_ID =" + TB_Staff_ID.Text + " Where Id=" + TB_Visitor_ID.Text;
 
             MessageBox.Show(sql_Query4);
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
@@ -218,13 +220,13 @@ namespace Visitor_Information_System_1._1
 
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private void Btn_Delete_Click(object sender, EventArgs e)
         {
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query = "Delete from Student_Info where Id = " + TB_Student_ID.Text;
+            string sql_Query = "Delete from Visitor where Visitor_Id = " + TB_Visitor_ID.Text;
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd5 = new SqlCommand(sql_Query, conn);
