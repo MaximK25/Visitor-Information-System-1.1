@@ -34,10 +34,9 @@ namespace Visitor_Information_System_1._1
             TB_VisitorSurname.Clear();
             TB_Email.Clear();
             TB_Mobile.Clear();
-            TB_Visitor_ID.Clear();
-            CB_Meeting_With.Text = "Select From Drop Down";
-            LB_Visitor_Details.Items.Clear();
+            CB_Meeting_With.Text = "Select From Drop Down";          
             TB_Staff_ID.Clear();
+            LB_Visitor_Details.Items.Clear();
         }
 
         public void ListBox_Data_Load()
@@ -48,7 +47,7 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement ) 
-            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName,Visitor.Mobile, Visitor.Email,Staff.Staff_ID, Staff.Meeting_With, From Visitor, Staff Where Visitor.Staff_ID = Staff.Staff_ID";
+            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Staff_ID, Staff.Meeting_With, From Staff, Visitor Where Visitor.Staff_ID = Staff.Staff_ID";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd = new SqlCommand(sql_Query, conn);
@@ -72,13 +71,13 @@ namespace Visitor_Information_System_1._1
 
         }
 
-        public void Course_Data_Load() //Meeting_With_Data-???//
+        public void Course_Data_Load() //Meeting_With_Data-?????????????????????//
         {
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query2 = "Select Staff_Id,Meeting-With From Staff";
+            string sql_Query2 = "Select Staff_Id, Meeting-With From Staff";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd2 = new SqlCommand(sql_Query2, conn);
@@ -102,14 +101,14 @@ namespace Visitor_Information_System_1._1
             conn.Close();
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e) //What is the button ADD??//
+        private void Btn_Add_Click(object sender, EventArgs e) 
         {
 
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Meeting_With) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', '" + TB_Staff_ID.Text +" )";
+            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Meeting_With) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', '" + TB_Staff_ID.Text + " )";
            
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd4 = new SqlCommand(sql_Query3, conn);
@@ -201,7 +200,7 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query4 = "Update Visitor set Visitor Name = '" + TB_VisitorName.Text + "', Surname ='" + TB_VisitorSurname.Text + "', Mobile ='" + TB_Mobile.Text + "', Email ='" + TB_Email.Text + "', Staff_ID =" + TB_Staff_ID.Text + " Where Id=" + TB_Visitor_ID.Text;
+            string sql_Query4 = "Update Visitor set Visitor Name = '" + TB_VisitorName.Text + "', Surname ='" + TB_VisitorSurname.Text + "', Mobile ='" + TB_Mobile.Text + "', Email ='" + TB_Email.Text + "', Staff_ID =" + TB_Staff_ID.Text + " Where Visitor_Id=" + TB_Visitor_ID.Text;
 
             MessageBox.Show(sql_Query4);
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
@@ -241,16 +240,6 @@ namespace Visitor_Information_System_1._1
             conn.Close();
 
             ListBox_Data_Load(); // Calling load listbox function to fetch inserted row as well as display in ListBox
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Meeting_With_Click(object sender, EventArgs e)
-        {
 
         }
     }
