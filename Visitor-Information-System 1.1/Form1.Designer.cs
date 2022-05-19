@@ -28,115 +28,217 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.TB_Visitor_ID = new System.Windows.Forms.TextBox();
+            this.TB_VisitorName = new System.Windows.Forms.TextBox();
+            this.TB_Email = new System.Windows.Forms.TextBox();
+            this.TB_Mobile = new System.Windows.Forms.TextBox();
+            this.TB_VisitorSurname = new System.Windows.Forms.TextBox();
+            this.CB_Meeting_With = new System.Windows.Forms.ComboBox();
+            this.LB_Visitor_Details = new System.Windows.Forms.ListBox();
+            this.Btn_Insert = new System.Windows.Forms.Button();
+            this.Btn_Delete = new System.Windows.Forms.Button();
+            this.Btn_Update = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Mobile = new System.Windows.Forms.Label();
+            this.lbl_SurName = new System.Windows.Forms.Label();
+            this.lbl_VisitorName = new System.Windows.Forms.Label();
+            this.lbl_Meeting_With = new System.Windows.Forms.Label();
+            this.lbl_Email = new System.Windows.Forms.Label();
+            this.lbl_Visitor_ID = new System.Windows.Forms.Label();
+            this.TB_Staff_ID = new System.Windows.Forms.TextBox();
+            this.lbl_Staff_ID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TB_Visitor_ID
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 22);
-            this.textBox1.TabIndex = 0;
+            this.TB_Visitor_ID.Location = new System.Drawing.Point(148, 28);
+            this.TB_Visitor_ID.Name = "TB_Visitor_ID";
+            this.TB_Visitor_ID.Size = new System.Drawing.Size(250, 22);
+            this.TB_Visitor_ID.TabIndex = 0;
             // 
-            // textBox5
+            // TB_VisitorName
             // 
-            this.textBox5.Location = new System.Drawing.Point(147, 98);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 22);
-            this.textBox5.TabIndex = 4;
+            this.TB_VisitorName.Location = new System.Drawing.Point(148, 73);
+            this.TB_VisitorName.Name = "TB_VisitorName";
+            this.TB_VisitorName.Size = new System.Drawing.Size(250, 22);
+            this.TB_VisitorName.TabIndex = 4;
             // 
-            // textBox2
+            // TB_Email
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 285);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 22);
-            this.textBox2.TabIndex = 5;
+            this.TB_Email.Location = new System.Drawing.Point(148, 201);
+            this.TB_Email.Name = "TB_Email";
+            this.TB_Email.Size = new System.Drawing.Size(250, 22);
+            this.TB_Email.TabIndex = 5;
             // 
-            // textBox3
+            // TB_Mobile
             // 
-            this.textBox3.Location = new System.Drawing.Point(147, 190);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 22);
-            this.textBox3.TabIndex = 6;
+            this.TB_Mobile.Location = new System.Drawing.Point(148, 157);
+            this.TB_Mobile.Name = "TB_Mobile";
+            this.TB_Mobile.Size = new System.Drawing.Size(250, 22);
+            this.TB_Mobile.TabIndex = 6;
             // 
-            // textBox4
+            // TB_VisitorSurname
             // 
-            this.textBox4.Location = new System.Drawing.Point(147, 145);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 22);
-            this.textBox4.TabIndex = 7;
+            this.TB_VisitorSurname.Location = new System.Drawing.Point(148, 114);
+            this.TB_VisitorSurname.Name = "TB_VisitorSurname";
+            this.TB_VisitorSurname.Size = new System.Drawing.Size(250, 22);
+            this.TB_VisitorSurname.TabIndex = 7;
             // 
-            // comboBox1
+            // CB_Meeting_With
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(147, 239);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 24);
-            this.comboBox1.TabIndex = 8;
+            this.CB_Meeting_With.FormattingEnabled = true;
+            this.CB_Meeting_With.Location = new System.Drawing.Point(148, 240);
+            this.CB_Meeting_With.Name = "CB_Meeting_With";
+            this.CB_Meeting_With.Size = new System.Drawing.Size(250, 24);
+            this.CB_Meeting_With.TabIndex = 8;
+            this.CB_Meeting_With.Text = "Select From Drop Down";
             // 
-            // listBox1
+            // LB_Visitor_Details
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(465, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(309, 324);
-            this.listBox1.TabIndex = 9;
+            this.LB_Visitor_Details.FormattingEnabled = true;
+            this.LB_Visitor_Details.ItemHeight = 16;
+            this.LB_Visitor_Details.Location = new System.Drawing.Point(464, 28);
+            this.LB_Visitor_Details.Name = "LB_Visitor_Details";
+            this.LB_Visitor_Details.Size = new System.Drawing.Size(299, 308);
+            this.LB_Visitor_Details.TabIndex = 9;
             // 
-            // button1
+            // Btn_Insert
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Location = new System.Drawing.Point(12, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 62);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "INSERT DATA";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Btn_Insert.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Btn_Insert.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Insert.Location = new System.Drawing.Point(12, 375);
+            this.Btn_Insert.Name = "Btn_Insert";
+            this.Btn_Insert.Size = new System.Drawing.Size(120, 62);
+            this.Btn_Insert.TabIndex = 10;
+            this.Btn_Insert.Text = "INSERT DATA";
+            this.Btn_Insert.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // Btn_Delete
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Location = new System.Drawing.Point(337, 348);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 62);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "DELETE DATA";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Btn_Delete.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Btn_Delete.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Delete.Location = new System.Drawing.Point(320, 375);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(120, 62);
+            this.Btn_Delete.TabIndex = 11;
+            this.Btn_Delete.Text = "DELETE DATA";
+            this.Btn_Delete.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // Btn_Update
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(181, 348);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 62);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "UPDATE DATA";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Btn_Update.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Btn_Update.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Update.Location = new System.Drawing.Point(162, 375);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(120, 62);
+            this.Btn_Update.TabIndex = 12;
+            this.Btn_Update.Text = "UPDATE DATA";
+            this.Btn_Update.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = " ";
+            // 
+            // lbl_Mobile
+            // 
+            this.lbl_Mobile.AutoSize = true;
+            this.lbl_Mobile.Location = new System.Drawing.Point(37, 157);
+            this.lbl_Mobile.Name = "lbl_Mobile";
+            this.lbl_Mobile.Size = new System.Drawing.Size(48, 16);
+            this.lbl_Mobile.TabIndex = 14;
+            this.lbl_Mobile.Text = "Mobile";
+            // 
+            // lbl_SurName
+            // 
+            this.lbl_SurName.AutoSize = true;
+            this.lbl_SurName.Location = new System.Drawing.Point(37, 114);
+            this.lbl_SurName.Name = "lbl_SurName";
+            this.lbl_SurName.Size = new System.Drawing.Size(61, 16);
+            this.lbl_SurName.TabIndex = 15;
+            this.lbl_SurName.Text = "Surname";
+            // 
+            // lbl_VisitorName
+            // 
+            this.lbl_VisitorName.AutoSize = true;
+            this.lbl_VisitorName.Location = new System.Drawing.Point(34, 69);
+            this.lbl_VisitorName.Name = "lbl_VisitorName";
+            this.lbl_VisitorName.Size = new System.Drawing.Size(84, 16);
+            this.lbl_VisitorName.TabIndex = 16;
+            this.lbl_VisitorName.Text = "Visitor Name";
+            // 
+            // lbl_Meeting_With
+            // 
+            this.lbl_Meeting_With.AutoSize = true;
+            this.lbl_Meeting_With.Location = new System.Drawing.Point(34, 240);
+            this.lbl_Meeting_With.Name = "lbl_Meeting_With";
+            this.lbl_Meeting_With.Size = new System.Drawing.Size(84, 16);
+            this.lbl_Meeting_With.TabIndex = 17;
+            this.lbl_Meeting_With.Text = "Meeting With";
+            this.lbl_Meeting_With.Click += new System.EventHandler(this.lbl_Meeting_With_Click);
+            // 
+            // lbl_Email
+            // 
+            this.lbl_Email.AutoSize = true;
+            this.lbl_Email.Location = new System.Drawing.Point(37, 201);
+            this.lbl_Email.Name = "lbl_Email";
+            this.lbl_Email.Size = new System.Drawing.Size(41, 16);
+            this.lbl_Email.TabIndex = 18;
+            this.lbl_Email.Text = "Email";
+            // 
+            // lbl_Visitor_ID
+            // 
+            this.lbl_Visitor_ID.AutoSize = true;
+            this.lbl_Visitor_ID.Location = new System.Drawing.Point(34, 28);
+            this.lbl_Visitor_ID.Name = "lbl_Visitor_ID";
+            this.lbl_Visitor_ID.Size = new System.Drawing.Size(64, 16);
+            this.lbl_Visitor_ID.TabIndex = 19;
+            this.lbl_Visitor_ID.Text = "Visitor_ID";
+            // 
+            // TB_Staff_ID
+            // 
+            this.TB_Staff_ID.Location = new System.Drawing.Point(148, 288);
+            this.TB_Staff_ID.Name = "TB_Staff_ID";
+            this.TB_Staff_ID.Size = new System.Drawing.Size(250, 22);
+            this.TB_Staff_ID.TabIndex = 20;
+            // 
+            // lbl_Staff_ID
+            // 
+            this.lbl_Staff_ID.AutoSize = true;
+            this.lbl_Staff_ID.Location = new System.Drawing.Point(37, 288);
+            this.lbl_Staff_ID.Name = "lbl_Staff_ID";
+            this.lbl_Staff_ID.Size = new System.Drawing.Size(49, 16);
+            this.lbl_Staff_ID.TabIndex = 21;
+            this.lbl_Staff_ID.Text = "Staff ID";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(775, 449);
+            this.Controls.Add(this.lbl_Staff_ID);
+            this.Controls.Add(this.TB_Staff_ID);
+            this.Controls.Add(this.lbl_Visitor_ID);
+            this.Controls.Add(this.lbl_Email);
+            this.Controls.Add(this.lbl_Meeting_With);
+            this.Controls.Add(this.lbl_VisitorName);
+            this.Controls.Add(this.lbl_SurName);
+            this.Controls.Add(this.lbl_Mobile);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Btn_Update);
+            this.Controls.Add(this.Btn_Delete);
+            this.Controls.Add(this.Btn_Insert);
+            this.Controls.Add(this.LB_Visitor_Details);
+            this.Controls.Add(this.CB_Meeting_With);
+            this.Controls.Add(this.TB_VisitorSurname);
+            this.Controls.Add(this.TB_Mobile);
+            this.Controls.Add(this.TB_Email);
+            this.Controls.Add(this.TB_VisitorName);
+            this.Controls.Add(this.TB_Visitor_ID);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -147,16 +249,25 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox TB_Visitor_ID;
+        private System.Windows.Forms.TextBox TB_VisitorName;
+        private System.Windows.Forms.TextBox TB_Email;
+        private System.Windows.Forms.TextBox TB_Mobile;
+        private System.Windows.Forms.TextBox TB_VisitorSurname;
+        private System.Windows.Forms.ComboBox CB_Meeting_With;
+        private System.Windows.Forms.ListBox LB_Visitor_Details;
+        private System.Windows.Forms.Button Btn_Insert;
+        private System.Windows.Forms.Button Btn_Delete;
+        private System.Windows.Forms.Button Btn_Update;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Mobile;
+        private System.Windows.Forms.Label lbl_SurName;
+        private System.Windows.Forms.Label lbl_VisitorName;
+        private System.Windows.Forms.Label lbl_Meeting_With;
+        private System.Windows.Forms.Label lbl_Email;
+        private System.Windows.Forms.Label lbl_Visitor_ID;
+        private System.Windows.Forms.TextBox TB_Staff_ID;
+        private System.Windows.Forms.Label lbl_Staff_ID;
     }
 }
 

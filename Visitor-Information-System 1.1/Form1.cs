@@ -29,13 +29,14 @@ namespace Visitor_Information_System_1._1
 
         public void Clear_Fields() // Function to clear all fields as well as ListBox
         {
-            TB_Name.Clear();
-            TB_Mobile.Clear();
+            TB_Visitor_ID.Clear();
+            TB_VisitorName.Clear();
+            TB_VisitorSurname.Clear();
             TB_Email.Clear();
-            TB_Course_ID.Clear();
-            TB_Student_ID.Clear();
-            CB_Course_Details.Text = "Select From Drop Down";
-            LB_Student.Items.Clear();
+            TB_Visitor_ID.Clear();
+            CB_Meeting_With.Text = "Select From Drop Down";
+            LB_Visitor_Details.Items.Clear();
+            TB_Staff_ID.Clear();
         }
 
         public void ListBox_Data_Load()
@@ -46,7 +47,7 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement ) 
-            string sql_Query = "select Student_Info.Id, Student_Info.Name, Student_Info.Mobile, Student_Info.Email, Course_Details.Course_Name From Student_Info, Course_Details Where Student_Info.Course_ID = Course_Details.Course_ID";
+            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName,Visitor.Mobile, Visitor.Email,Staff.Staff_ID, Staff.Meeting_With, From Visitor, Staff Where Visitor.Staff_ID = Staff.Staff_ID";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd = new SqlCommand(sql_Query, conn);
@@ -59,7 +60,7 @@ namespace Visitor_Information_System_1._1
             while (reader.Read())
             {
                 //populate data in Listbox from Reader
-                LB_Student.Items.Add((reader["Id"] + "-" + reader["Name"] + "-" + reader["Mobile"] + "-" + reader["Email"] + "-" + reader["Course_Name"]));
+                LB_Visitor_Details.Items.Add((reader["Visitor_Id"] + "-" + reader["VisitorName"] + "-" + reader["Surname"] + "-" + reader["Mobile"] + "-" + reader["Email"] + "-" + reader["Meeting_With"]));
             }
 
             //Close Database reader
@@ -70,13 +71,13 @@ namespace Visitor_Information_System_1._1
 
         }
 
-        public void Course_Data_Load()
+        public void Course_Data_Load() //Meeting_With_Data-???//
         {
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query2 = "Select Course_Id,Course_Name From Course_Details";
+            string sql_Query2 = "Select Staff_Id,Meeting-With From Staff";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd2 = new SqlCommand(sql_Query2, conn);
@@ -89,7 +90,7 @@ namespace Visitor_Information_System_1._1
             while (reader.Read())
             {
                 //populate data in ComboBox from Reader
-                CB_Course_Details.Items.Add(reader["Course_Name"]);
+                CB_Meeting_With.Items.Add(reader["Meeting_With"]);
 
             }
 
@@ -100,15 +101,15 @@ namespace Visitor_Information_System_1._1
             conn.Close();
         }
 
-        private void btn_Add_Click(object sender, EventArgs e)
+        private void btn_Add_Click(object sender, EventArgs e) //What is the button ADD??//
         {
 
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query3 = "Insert into Student_Info(Name, Mobile, Email, Course_ID) values ('" + TB_Name.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', " + TB_Course_ID.Text + " )";
-
+            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Meeting_With) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', '" + TB_Staff_ID.Text +" )";
+            //FINISHED HERE//
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd4 = new SqlCommand(sql_Query3, conn);
 
@@ -242,6 +243,11 @@ namespace Visitor_Information_System_1._1
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Meeting_With_Click(object sender, EventArgs e)
         {
 
         }
