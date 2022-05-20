@@ -92,6 +92,7 @@
             this.CB_Meeting_With.Size = new System.Drawing.Size(250, 24);
             this.CB_Meeting_With.TabIndex = 8;
             this.CB_Meeting_With.Text = "Select From Drop Down";
+            this.CB_Meeting_With.SelectedValueChanged += new System.EventHandler(this.Staff_ID_Funtion);
             // 
             // LB_Visitor_Details
             // 
@@ -112,6 +113,7 @@
             this.Btn_Insert.TabIndex = 10;
             this.Btn_Insert.Text = "INSERT DATA";
             this.Btn_Insert.UseVisualStyleBackColor = false;
+            this.Btn_Insert.Click += new System.EventHandler(this.Btn_Insert_Click);
             // 
             // Btn_Delete
             // 
@@ -123,6 +125,7 @@
             this.Btn_Delete.TabIndex = 11;
             this.Btn_Delete.Text = "DELETE DATA";
             this.Btn_Delete.UseVisualStyleBackColor = false;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click_1);
             // 
             // Btn_Update
             // 
@@ -134,6 +137,7 @@
             this.Btn_Update.TabIndex = 12;
             this.Btn_Update.Text = "UPDATE DATA";
             this.Btn_Update.UseVisualStyleBackColor = false;
+            this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click_1);
             // 
             // label1
             // 
@@ -179,7 +183,6 @@
             this.lbl_Meeting_With.Size = new System.Drawing.Size(84, 16);
             this.lbl_Meeting_With.TabIndex = 17;
             this.lbl_Meeting_With.Text = "Meeting With";
-            this.lbl_Meeting_With.Click += new System.EventHandler(this.lbl_Meeting_With_Click);
             // 
             // lbl_Email
             // 
