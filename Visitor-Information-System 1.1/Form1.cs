@@ -49,7 +49,7 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement ) 
-            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Staff_ID, Staff.Meeting_With, From Visitor, Staffr Where Visitor.Staff_ID = Staff.Staff_ID";
+            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Staff_ID, Staff.Meeting_With, From Visitor, Staff Where Visitor.Staff_ID = Staff.Staff_ID";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd = new SqlCommand(sql_Query, conn);
@@ -103,14 +103,14 @@ namespace Visitor_Information_System_1._1
             conn.Close();
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e)
+        private void Btn_Insert_Click(object sender, EventArgs e) // Add and Insert button is the same?//
         {
 
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Meeting_With) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', '" + TB_Staff_ID.Text + " )";
+            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Staff_ID) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', '" + TB_Staff_ID.Text + " )";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd4 = new SqlCommand(sql_Query3, conn);
@@ -249,11 +249,7 @@ namespace Visitor_Information_System_1._1
         {
 
         }
-
-        private void Btn_Insert_Click(object sender, EventArgs e)
-        {
-
-        }        
+                     
     }
 }
 
