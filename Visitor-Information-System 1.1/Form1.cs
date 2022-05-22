@@ -14,7 +14,8 @@ namespace Visitor_Information_System_1._1
     public partial class Form1 : Form
     {
         //connection string to connect to database
-        string connString = @"Data Source=NSK-NOTE06\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connString = @"Data Source=NSK-NOTE06\SQLEXPRESS;Initial Catalog=VisitorInfo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        
 
         int Visitor_ID = 0;
         public Form1()
@@ -49,10 +50,9 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement ) 
-            string sql_Query = "select Visitor.Visitor_ID, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Meeting_With FROM Staff, Visitor WHERE Visitor.Staff_ID = Staff.Staff_ID";
+            string sql_Query = "select Visitor.Visitor_ID, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Staff_ID, Staff.Meeting_With FROM Staff, Visitor WHERE Visitor.Staff_ID = Staff.Staff_ID";
 
-            //"select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Staff_ID, Staff.Meeting_With From Staff, Visitor Where Visitor.Staff_ID = Staff.Staff_ID";
-
+            
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd = new SqlCommand(sql_Query, conn);
 
@@ -75,13 +75,13 @@ namespace Visitor_Information_System_1._1
 
         }
 
-        public void Staff_Data_Load() //Meeting_With_Data-?????????????????????//
+        public void Staff_Data_Load() //
         {
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query2 = "Select Staff_Id, Meeting-With From Staff";
+            string sql_Query2 = "Select Staff_Id, Meeting_With From Staff";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd2 = new SqlCommand(sql_Query2, conn);

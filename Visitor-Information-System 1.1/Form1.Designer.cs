@@ -135,7 +135,7 @@
             this.Btn_Update.Name = "Btn_Update";
             this.Btn_Update.Size = new System.Drawing.Size(120, 62);
             this.Btn_Update.TabIndex = 12;
-            this.Btn_Update.Text = "UPDATE DATA";
+            this.Btn_Update.Text = "UPDATE/EDIT DATA";
             this.Btn_Update.UseVisualStyleBackColor = false;
             this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click_1);
             // 
