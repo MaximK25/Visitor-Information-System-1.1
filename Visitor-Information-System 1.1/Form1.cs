@@ -49,7 +49,9 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement ) 
-            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Staff_ID, Staff.Meeting_With, From Visitor, Staff Where Visitor.Staff_ID = Staff.Staff_ID";
+            string sql_Query = "select Visitor.Visitor_ID, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Meeting_With FROM Staff, Visitor WHERE Visitor.Staff_ID = Staff.Staff_ID";
+
+            //"select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Staff_ID, Staff.Meeting_With From Staff, Visitor Where Visitor.Staff_ID = Staff.Staff_ID";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd = new SqlCommand(sql_Query, conn);
@@ -110,7 +112,7 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Staff_ID) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', '" + TB_Staff_ID.Text + " )";
+            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Staff_ID) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', " + TB_Staff_ID.Text + " )";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd4 = new SqlCommand(sql_Query3, conn);
@@ -160,13 +162,14 @@ namespace Visitor_Information_System_1._1
             }
             string VisitorData = LB_Visitor_Details.SelectedItem.ToString();
             string[] Field_Data = VisitorData.Split('-');
+
             Visitor_ID = Int16.Parse(Field_Data[0]);
 
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement ) 
-            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email,Staff.Staff_ID, Staff.Meetung_With From Visitor, Staff Where Visitor.Staff_ID = Staff.Staff_ID AND Visitor_Id =" + Visitor_ID;
+            string sql_Query = "select Visitor.Visitor_Id, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email,Staff.Staff_ID, Staff.Meeting_With From Visitor, Staff Where Visitor.Staff_ID = Staff.Staff_ID AND Visitor_Id =" + Visitor_ID;
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd = new SqlCommand(sql_Query, conn);
@@ -202,7 +205,7 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query4 = "Update Visitor set Visitor Name = '" + TB_VisitorName.Text + "', Surname ='" + TB_VisitorSurname.Text + "', Mobile ='" + TB_Mobile.Text + "', Email ='" + TB_Email.Text + "', Staff_ID =" + TB_Staff_ID.Text + " Where Visitor_Id=" + TB_Visitor_ID.Text;
+            string sql_Query4 = "Update Visitor set Visitor Name = '" + TB_VisitorName.Text + "', Surname ='" + TB_VisitorSurname.Text + "', Mobile ='" + TB_Mobile.Text + "', Email ='" + TB_Email.Text + "', Staff_ID = " + TB_Staff_ID.Text + ",   Where Visitor_Id=" + TB_Visitor_ID.Text;
 
             MessageBox.Show(sql_Query4);
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
