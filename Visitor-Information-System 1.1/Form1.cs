@@ -15,7 +15,7 @@ namespace Visitor_Information_System_1._1
     {
         //connection string to connect to database
         string connString = @"Data Source=NSK-NOTE06\SQLEXPRESS;Initial Catalog=VisitorInfo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        
+
 
         int Visitor_ID = 0;
         public Form1()
@@ -52,7 +52,7 @@ namespace Visitor_Information_System_1._1
             // set the sql command ( Statement ) 
             string sql_Query = "select Visitor.Visitor_ID, Visitor.VisitorName, Visitor.SurName, Visitor.Mobile, Visitor.Email, Staff.Staff_ID, Staff.Meeting_With FROM Staff, Visitor WHERE Visitor.Staff_ID = Staff.Staff_ID";
 
-            
+
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd = new SqlCommand(sql_Query, conn);
 
@@ -105,13 +105,13 @@ namespace Visitor_Information_System_1._1
             conn.Close();
         }
 
-        private void Btn_Insert_Click(object sender, EventArgs e) // Add and Insert button is the same?//
+        private void Btn_Insert_Click(object sender, EventArgs e)
         {
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Staff_ID) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', " + TB_Staff_ID.Text + ")";
+            string sql_Query3 = "Insert into Visitor (VisitorName, SurName, Mobile, Email, Staff_ID) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', " + TB_Staff_ID.Text + ")";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd4 = new SqlCommand(sql_Query3, conn);
@@ -127,31 +127,7 @@ namespace Visitor_Information_System_1._1
 
             ListBox_Data_Load(); // Calling load listbox function to fetch inserted row as well as display in ListBox
         }
-        private void Staff_ID_Function(object sender, EventArgs e)
-        {
-            // Creating instance of SqlConnection 
-            SqlConnection conn = new SqlConnection(connString);
 
-            // set the sql command ( Statement )
-            string Staff_ID_Query = "Select Staff_Id from Staff where Meeting_With ='" + CB_Meeting_With.SelectedItem.ToString() + "'";
-
-            // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
-            SqlCommand cmd3 = new SqlCommand(Staff_ID_Query, conn);
-
-            //Open connection
-            conn.Open();
-
-            // Creating instance of SqlDataReader 
-            SqlDataReader reader = cmd3.ExecuteReader();
-            while (reader.Read())
-            {
-                //populate data in TextBox from Reader
-                TB_Staff_ID.Text = reader["Staff_Id"].ToString();
-            }
-
-            //Close connection
-            conn.Close();
-        }
         private void LB_Visitor_Details_MouseClick(object sender, MouseEventArgs e)
         {
             var selectedValue = LB_Visitor_Details.SelectedItem;
@@ -204,7 +180,7 @@ namespace Visitor_Information_System_1._1
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query4 = "Update Visitor set Visitor Name = '" + TB_VisitorName.Text + "', Surname ='" + TB_VisitorSurname.Text + "', Mobile ='" + TB_Mobile.Text + "', Email ='" + TB_Email.Text + "', Staff_ID = " + TB_Staff_ID.Text + ",   Where Visitor_Id=" + TB_Visitor_ID.Text;
+            string sql_Query4 = "Update Visitor set VisitorName = '" + TB_VisitorName.Text + "', SurName ='" + TB_VisitorSurname.Text + "', Mobile ='" + TB_Mobile.Text + "', Email ='" + TB_Email.Text + "', Staff_ID = " + TB_Staff_ID.Text + " Where Visitor_Id=" + TB_Visitor_ID.Text;
 
             MessageBox.Show(sql_Query4);
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
@@ -249,9 +225,31 @@ namespace Visitor_Information_System_1._1
 
         private void Staff_ID_Funtion(object sender, EventArgs e)
         {
+            // Creating instance of SqlConnection 
+            SqlConnection conn = new SqlConnection(connString);
 
+            // set the sql command ( Statement )
+            string Staff_ID_Query = "Select Staff_Id from Staff where Meeting_With ='" + CB_Meeting_With.SelectedItem.ToString() + "'";
+
+            // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
+            SqlCommand cmd3 = new SqlCommand(Staff_ID_Query, conn);
+
+            //Open connection
+            conn.Open();
+
+            // Creating instance of SqlDataReader 
+            SqlDataReader reader = cmd3.ExecuteReader();
+            while (reader.Read())
+            {
+                //populate data in TextBox from Reader
+                TB_Staff_ID.Text = reader["Staff_Id"].ToString();
+            }
+
+            //Close connection
+            conn.Close();
         }
-                     
+
     }
 }
+
 

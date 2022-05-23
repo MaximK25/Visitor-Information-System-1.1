@@ -51,6 +51,7 @@
             // 
             // TB_Visitor_ID
             // 
+            this.TB_Visitor_ID.Enabled = false;
             this.TB_Visitor_ID.Location = new System.Drawing.Point(148, 28);
             this.TB_Visitor_ID.Name = "TB_Visitor_ID";
             this.TB_Visitor_ID.Size = new System.Drawing.Size(250, 22);
@@ -100,16 +101,17 @@
             this.LB_Visitor_Details.ItemHeight = 16;
             this.LB_Visitor_Details.Location = new System.Drawing.Point(464, 28);
             this.LB_Visitor_Details.Name = "LB_Visitor_Details";
-            this.LB_Visitor_Details.Size = new System.Drawing.Size(299, 308);
+            this.LB_Visitor_Details.Size = new System.Drawing.Size(456, 340);
             this.LB_Visitor_Details.TabIndex = 9;
+            this.LB_Visitor_Details.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LB_Visitor_Details_MouseClick);
             // 
             // Btn_Insert
             // 
             this.Btn_Insert.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Btn_Insert.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Insert.Location = new System.Drawing.Point(12, 375);
+            this.Btn_Insert.Location = new System.Drawing.Point(62, 411);
             this.Btn_Insert.Name = "Btn_Insert";
-            this.Btn_Insert.Size = new System.Drawing.Size(120, 62);
+            this.Btn_Insert.Size = new System.Drawing.Size(181, 62);
             this.Btn_Insert.TabIndex = 10;
             this.Btn_Insert.Text = "INSERT DATA";
             this.Btn_Insert.UseVisualStyleBackColor = false;
@@ -119,9 +121,9 @@
             // 
             this.Btn_Delete.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Btn_Delete.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Delete.Location = new System.Drawing.Point(320, 375);
+            this.Btn_Delete.Location = new System.Drawing.Point(390, 411);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(120, 62);
+            this.Btn_Delete.Size = new System.Drawing.Size(181, 62);
             this.Btn_Delete.TabIndex = 11;
             this.Btn_Delete.Text = "DELETE DATA";
             this.Btn_Delete.UseVisualStyleBackColor = false;
@@ -131,9 +133,9 @@
             // 
             this.Btn_Update.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Btn_Update.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Update.Location = new System.Drawing.Point(162, 375);
+            this.Btn_Update.Location = new System.Drawing.Point(716, 411);
             this.Btn_Update.Name = "Btn_Update";
-            this.Btn_Update.Size = new System.Drawing.Size(120, 62);
+            this.Btn_Update.Size = new System.Drawing.Size(181, 62);
             this.Btn_Update.TabIndex = 12;
             this.Btn_Update.Text = "UPDATE/EDIT DATA";
             this.Btn_Update.UseVisualStyleBackColor = false;
@@ -204,6 +206,7 @@
             // 
             // TB_Staff_ID
             // 
+            this.TB_Staff_ID.Enabled = false;
             this.TB_Staff_ID.Location = new System.Drawing.Point(148, 288);
             this.TB_Staff_ID.Name = "TB_Staff_ID";
             this.TB_Staff_ID.Size = new System.Drawing.Size(250, 22);
@@ -222,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 449);
+            this.ClientSize = new System.Drawing.Size(932, 579);
             this.Controls.Add(this.lbl_Staff_ID);
             this.Controls.Add(this.TB_Staff_ID);
             this.Controls.Add(this.lbl_Visitor_ID);
