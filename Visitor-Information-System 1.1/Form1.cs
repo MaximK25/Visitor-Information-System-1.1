@@ -107,12 +107,11 @@ namespace Visitor_Information_System_1._1
 
         private void Btn_Insert_Click(object sender, EventArgs e) // Add and Insert button is the same?//
         {
-
             // Creating instance of SqlConnection 
             SqlConnection conn = new SqlConnection(connString);
 
             // set the sql command ( Statement )
-            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Staff_ID) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', " + TB_Staff_ID.Text + " )";
+            string sql_Query3 = "Insert into Visitor (VisitorName, Surname, Mobile, Email, Staff_ID) values ('" + TB_VisitorName.Text + "','" + TB_VisitorSurname.Text + "','" + TB_Mobile.Text + "','" + TB_Email.Text + "', " + TB_Staff_ID.Text + ")";
 
             // Creating instance of SqlCommand  and set the connection and query to instance of SqlCommand
             SqlCommand cmd4 = new SqlCommand(sql_Query3, conn);
