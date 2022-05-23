@@ -14,7 +14,14 @@ namespace Visitor_Information_System_1._1
     public partial class Form1 : Form
     {
         //connection string to connect to database
-        string connString = @"Data Source=NSK-NOTE06\SQLEXPRESS;Initial Catalog=VisitorInfo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connString = @"Data Source=NSK-NOTE06\SQLEXPRESS;
+                            Initial Catalog=VisitorInfo;
+                            Integrated Security=True;
+                            Connect Timeout=30;
+                            Encrypt=False;
+                            TrustServerCertificate=False;
+                            ApplicationIntent=ReadWrite;
+                            MultiSubnetFailover=False";
 
 
         int Visitor_ID = 0;
